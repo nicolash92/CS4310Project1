@@ -1,6 +1,6 @@
 package com.board;
 
-public class MonoBlock {
+public class NonoBlock {
 
 	//char emptyBlock ='\u25A0';
 	//char filledBlock ='\u2B1B';
@@ -10,10 +10,14 @@ public class MonoBlock {
 	//state of block
 	private boolean playerFilled;
 	
-	public MonoBlock(boolean filled) {
+	public NonoBlock(boolean filled) {
 		this.filled=filled;
 	}
-
+	
+	public void setSolution(boolean filled) {
+		this.filled = filled;
+	}
+	
 	public boolean isFilled() {
 		return filled;
 	}
@@ -33,11 +37,11 @@ public class MonoBlock {
 	public boolean isCorrect() {
 		return this.isFilled()==this.isPlayerFilled();
 	}
-
+/*
 	@Override
 	public String toString() {
 		return "";//+(playerFilled?this.filledBlock:this.emptyBlock);
 	}
-
+*/
 	
 }
