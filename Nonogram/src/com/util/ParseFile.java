@@ -1,4 +1,4 @@
-package com.board;
+package com.util;
 
 import java.io.BufferedReader;
 import java.io.File;
