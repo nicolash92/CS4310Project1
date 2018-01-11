@@ -2,8 +2,42 @@ package com.board;
 
 public class MonoBlock {
 
-	public MonoBlock() {
-		// TODO Auto-generated constructor stub
+	//char emptyBlock ='\u25A0';
+	//char filledBlock ='\u2B1B';
+	
+	//solution for block
+	private boolean filled;
+	//state of block
+	private boolean playerFilled;
+	
+	public MonoBlock(boolean filled) {
+		this.filled=filled;
 	}
 
+	public boolean isFilled() {
+		return filled;
+	}
+
+	public void setFilled(boolean filled) {
+		this.filled = filled;
+	}
+
+	public boolean isPlayerFilled() {
+		return playerFilled;
+	}
+	
+	public void flipBlock() {
+		playerFilled =! playerFilled;
+	}
+	
+	public boolean isCorrect() {
+		return this.isFilled()==this.isPlayerFilled();
+	}
+
+	@Override
+	public String toString() {
+		return "";//+(playerFilled?this.filledBlock:this.emptyBlock);
+	}
+
+	
 }
