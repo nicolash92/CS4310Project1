@@ -6,6 +6,7 @@ public class Menu {
 	private int width;
 	private int height;
 	
+	//Constructor for menu
 	public Menu() {
 		width = height = 0;
 		
@@ -55,6 +56,7 @@ public class Menu {
 		}
 	}
 	
+	//Constructor method is used for user to create their own nonogram
 	public void constructor() {
 		Scanner sc = new Scanner(System.in);
 		int width = height = -1;
@@ -70,6 +72,7 @@ public class Menu {
 		sc.close();
 	}
 	
+	//userLoadGame method let the user select and upload a already existing game
 	public void userLoadGame() {
 		//text file 
 		
