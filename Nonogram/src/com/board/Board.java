@@ -16,6 +16,7 @@ public class Board {
 		}
 	}
 	
+	
 	//create a board from String
 /*	public Board(String boardName) {
 		
