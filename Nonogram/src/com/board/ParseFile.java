@@ -1,4 +1,4 @@
-package cs4310;
+package com.board;
 
 import java.io.BufferedReader;
 import java.io.File;
