@@ -1,4 +1,4 @@
-package cs4310;
+package com.util;
 
 import java.util.ArrayList;
 
@@ -120,6 +120,5 @@ public class DisplayGridHints {
 				}
 				System.out.println("");
 			}
-			
 	}
 }
