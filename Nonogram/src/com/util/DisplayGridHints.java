@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class DisplayGridHints {
 
 	
-	public static void DisplayGridHints(int boardarray[][]) {
+	public static void displayGridHints(int boardarray[][]) {
 	
 			int[][]rows = new int[boardarray.length][];
 			int[][]cols = new int[boardarray[0].length][];
