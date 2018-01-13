@@ -5,9 +5,9 @@ import java.util.Random;
 public class Board {
 	private NonoBlock[][] board;
 
-	//generate a random nonogram of a certain width and hight
-	public Board(int hight, int width) {
-		board = new NonoBlock[width][hight];
+	//generate a random nonogram of a certain number of rows and columns
+	public Board(int rows, int columns) {
+		board = new NonoBlock[rows][columns];
 		Random r= new Random(System.currentTimeMillis());
 		for(int i=0;i<board.length; i++) {
 			for(int j=0;j<board[i].length; j++) {
@@ -15,13 +15,6 @@ public class Board {
 			}
 		}
 	}
-	
-	
-	//create a board from String
-/*	public Board(String boardName) {
-		
-	}
-*/
 	
 	// start with a pre-made board
 	public Board(NonoBlock[][] board) {
@@ -80,8 +73,8 @@ public class Board {
 	}
 	
 	//flips the block between filled and not filled
-	public boolean changeBlock(int y, int x) {
-		if((x<0)||(y<0)||(board.length<x)||(board[x].length<y))
+	public boolean changeBlock(int x, int y) {
+		if((x<0)||(y<0)||(board.length<=x)||(board[x].length<=y))
 			return false;
 		
 		board[x][y].flipBlock();
