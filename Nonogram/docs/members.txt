@@ -3,5 +3,3 @@
 Nicolas Hanout
 Derrick Marshall
 Hien Vo
-
-http://download.eclipse.org/egit/updates/
