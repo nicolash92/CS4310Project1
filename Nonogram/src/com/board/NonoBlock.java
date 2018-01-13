@@ -47,5 +47,4 @@ public class NonoBlock {
 	public String solution() {
 		return ""+(filled?this.filledBlock:this.emptyBlock);
 	}
-	
 }
