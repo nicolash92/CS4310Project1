@@ -81,12 +81,107 @@ public class Board {
 	
 	//flips the block between filled and not filled
 	public boolean changeBlock(int y, int x) {
-		if((x<0)||(y<0)||(board.length>x)||(board[x].length>y))
+		if((x<0)||(y<0)||(board.length<x)||(board[x].length<y))
 			return false;
 		
 		board[x][y].flipBlock();
 		return true;
 	}
+
+	public String showSolution() {
+		int rowHintsLength = getRowHintsLength();
+		String str= getColumnsHints(rowHintsLength);
+		for(int i=0;i<board.length; i++) {
+			str += padToSize((getRowHints(i).trim().length()==0?"0":getRowHints(i)),rowHintsLength);
+			for(int j=0;j<board[i].length; j++) {
+				str+=(board[i][j]).solution();
+			}
+			str+="\n";
+		}
+		return str;
+	}
+
+	@Override
+	public String toString() {
+		int rowHintsLength = getRowHintsLength();
+		String str= getColumnsHints(rowHintsLength);
+		for(int i=0;i<board.length; i++) {
+			str += padToSize((getRowHints(i).trim().length()==0?"0":getRowHints(i)),rowHintsLength);
+			for(int j=0;j<board[i].length; j++) {
+				str+=(board[i][j]).toString();
+			}
+			str+="\n";
+		}
+		return str;
+	}
+	
+	private String padToSize(String rowHints, int rowHintsLength) {
+		String temp = "";
+		while((temp.length()+rowHints.length())<rowHintsLength)
+			temp+=" ";
+		return temp+rowHints;
+	}
+
+
+	private String getColumnsHints(int rowHintsLength) {
+		//int columnHintsLength = getColumnHintsLength();
+		String padding = padToSize("",rowHintsLength);
+		String str="";
+		String strLine="";
+		for(int i=0;i<board[0].length; i++) {
+			for(int j=0;j<board.length/2; j++) {
+				String[] tempArr = getColumnHints(i).split(" ");
+				if(j<tempArr.length)
+					strLine += tempArr[j]+" ";
+			}
+			if(strLine.trim().length()==0)
+				strLine="0";
+			str+=(strLine+"\n");
+			strLine="";
+		}
+
+		String[] colsStr = str.split("\n");
+		str="";
+		for(int j=0; j<board.length+1; j++) {
+			strLine=padding;
+			for(int i=0; i<colsStr.length; i++) {
+				String[] temp=colsStr[i].split(" ");
+				if(j<temp.length)
+					strLine+= temp[j];
+				else
+					strLine+=" ";
+			}
+			strLine+="\n";
+			if(strLine.trim().length()>0)
+				str+=strLine;
+		}
+		return str;
+	}
+
+
+	private int getRowHintsLength() {
+		int length =1;
+		int temp;
+		for(int i=0;i<board.length; i++) {
+			temp= getRowHints(i).length();
+			if(length<temp)
+				length=temp;
+		}
+		return length;
+	}
+	/*
+	private int getColumnHintsLength() {
+		int length =0;
+		int temp;
+		for(int i=0;i<board[0].length; i++) {
+			temp= getRowHints(i).split(" ").length;
+			if(length<temp)
+				length=temp;
+		}
+		return length;
+	}
+	
+*/
 	
 
 }

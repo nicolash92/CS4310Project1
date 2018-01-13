@@ -4,6 +4,8 @@ public class NonoBlock {
 
 	//char emptyBlock ='\u25A0';
 	//char filledBlock ='\u2B1B';
+	char emptyBlock ='-';
+	char filledBlock ='*';
 	
 	//solution for block
 	private boolean filled;
@@ -37,11 +39,16 @@ public class NonoBlock {
 	public boolean isCorrect() {
 		return this.isFilled()==this.isPlayerFilled();
 	}
-/*
-	@Override
+
 	public String toString() {
-		return "";//+(playerFilled?this.filledBlock:this.emptyBlock);
+		return ""+(playerFilled?this.filledBlock:this.emptyBlock);
 	}
-*/
+	
+	public String solution() {
+		return ""+(filled?this.filledBlock:this.emptyBlock);
+	}
+	
+	
+
 	
 }
