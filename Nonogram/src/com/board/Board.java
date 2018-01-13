@@ -124,7 +124,6 @@ public class Board {
 
 
 	private String getColumnsHints(int rowHintsLength) {
-		//int columnHintsLength = getColumnHintsLength();
 		String padding = padToSize("",rowHintsLength);
 		String str="";
 		String strLine="";
@@ -169,19 +168,7 @@ public class Board {
 		}
 		return length;
 	}
-	/*
-	private int getColumnHintsLength() {
-		int length =0;
-		int temp;
-		for(int i=0;i<board[0].length; i++) {
-			temp= getRowHints(i).split(" ").length;
-			if(length<temp)
-				length=temp;
-		}
-		return length;
-	}
-	
-*/
+
 	
 
 }
