@@ -1,10 +1,11 @@
 package com.ui;
 
 import java.util.Scanner;
-
+import com.View.viewConsole;
 public class Console {
 
 	public static void main(String[] args) {
+	/*
 		Scanner input = new Scanner(System.in);
 		Menu menu = new Menu();
 		boolean finished;
@@ -40,6 +41,28 @@ public class Console {
 			}
 			
 		}
+	*/
+		Scanner input = new Scanner(System.in);
+		viewConsole view = new viewConsole();
+		boolean done = false;
+		
+		while(!done) {
+			int choice = view.viewChoice(input);
+			
+			switch(choice){
+			case -1:
+				//Quit
+				done = true;
+				break;
+				
+			case 0:
+				view.viewGames(input);
+			}
+		}
+		
+		input.close();
+		
 	}
+	
 
 }
